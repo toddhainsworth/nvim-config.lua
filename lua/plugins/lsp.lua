@@ -27,14 +27,33 @@ return {
         nerd_font_variant = 'mono'
       },
 
-      completion = { documentation = { auto_show = false } },
-
+      -- completion = { documentation = { auto_show = false } },
+      completion = {
+        accept = {
+          -- experimental auto-brackets support
+          auto_brackets = {
+            enabled = true,
+          },
+        },
+        menu = {
+          draw = {
+            treesitter = { "lsp" },
+          },
+        },
+        documentation = {
+          auto_show = true,
+          auto_show_delay_ms = 200,
+        },
+        ghost_text = {
+          enabled = true
+        },
+      },
       sources = {
         -- for nvim-cmp sources
         compat = {},
         default = { 'lsp', 'path', 'snippets', 'buffer' },
       },
-
+      signature = { enabled = true },
       fuzzy = { implementation = "prefer_rust_with_warning" }
     },
     opts_extend = { "sources.default" }

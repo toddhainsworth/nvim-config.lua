@@ -50,7 +50,7 @@ return {
       },
       sources = {
         -- for nvim-cmp sources
-        compat = {},
+        -- compat = {},
         default = { 'lsp', 'path', 'snippets', 'buffer' },
       },
       signature = { enabled = true },

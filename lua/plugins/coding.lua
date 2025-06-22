@@ -1,4 +1,5 @@
 return {
+  -- Treesitter to make stuff more visible to NeoVim
   {
     "nvim-treesitter/nvim-treesitter",
     branch = 'master',
@@ -7,6 +8,7 @@ return {
     build = ":TSUpdate",
     opts = {}
   },
+  -- TODO comments are more visible
   { "folke/todo-comments.nvim", opts = {} },
   {
     "kylechui/nvim-surround",
@@ -14,12 +16,15 @@ return {
     event = "VeryLazy",
     opts = {}
   },
+  -- More comment niceties
   {
     "folke/ts-comments.nvim",
     event = "VeryLazy",
     opts = {},
   },
+  -- Include Git signs in the left-gutter
   { "lewis6991/gitsigns.nvim",  opts = {} },
+  -- See errors in a quickfix window instead of inline
   {
     "folke/trouble.nvim",
     opts = {},
@@ -37,6 +42,7 @@ return {
       },
     },
   },
+  -- Format on save is primarily why I'll be using this
   {
     'stevearc/conform.nvim',
     opts = {
@@ -45,12 +51,13 @@ return {
       }
     },
   },
+  -- Show lines under the currently 'hovered' word and/or line
   {
     "ya2s/nvim-cursorline",
     opts = {
       cursorline = {
         enable = true,
-        timeout = 100,
+        timeout = 500,
         number = false,
       },
       cursorword = {
@@ -60,4 +67,7 @@ return {
       }
     }
   },
+  {
+    "github/copilot.vim"
+  }
 }

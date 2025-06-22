@@ -1,5 +1,3 @@
-vim.cmd[[colorscheme tokyonight-night]]
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
@@ -25,3 +23,5 @@ vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.wo.conceallevel = 2
 vim.opt.guifont = { "Source Code Pro", "h12" }
+
+vim.cmd [[colorscheme tokyonight-night]]

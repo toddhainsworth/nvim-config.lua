@@ -1,4 +1,5 @@
 return {
+  -- Use Mason to setup LSPs
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
@@ -9,6 +10,7 @@ return {
       "neovim/nvim-lspconfig",
     },
   },
+  -- Blink for completion
   {
     'saghen/blink.cmp',
     dependencies = { 'rafamadriz/friendly-snippets' },
@@ -27,10 +29,8 @@ return {
         nerd_font_variant = 'mono'
       },
 
-      -- completion = { documentation = { auto_show = false } },
       completion = {
         accept = {
-          -- experimental auto-brackets support
           auto_brackets = {
             enabled = true,
           },
@@ -42,10 +42,10 @@ return {
         },
         documentation = {
           auto_show = true,
-          auto_show_delay_ms = 200,
+          auto_show_delay_ms = 500,
         },
         ghost_text = {
-          enabled = true
+          enabled = false,
         },
       },
       sources = {
@@ -58,6 +58,7 @@ return {
     },
     opts_extend = { "sources.default" }
   },
+  -- LSP Config - obviously
   {
     'neovim/nvim-lspconfig',
     dependencies = { 'saghen/blink.cmp' },

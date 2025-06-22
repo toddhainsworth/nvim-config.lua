@@ -1,5 +1,8 @@
 return {
-  { 'echasnovski/mini.pairs', version = '*',  opts = {} },
-  { 'echasnovski/mini.ai',    version = '*',  opts = {} },
-  { 'echasnovski/mini.icons', version = '*',  opts = {} },
+  -- Automatically insert symbol pairs
+  { 'echasnovski/mini.pairs', version = '*', opts = {} },
+  -- Extend the `a` and `i` objects, not Artificial Intelligence
+  { 'echasnovski/mini.ai',    version = '*', opts = {} },
+  -- Icons!
+  { 'echasnovski/mini.icons', version = '*', opts = {} },
 }

@@ -13,7 +13,17 @@ return {
       explorer = { enabled = true },
       indent = { enabled = true },
       input = { enabled = true },
-      picker = { enabled = true },
+      picker = {
+        enabled = true,
+        sources = {
+          files = {
+            exclude = { "**/node_modules/**", "**/.git/**" }
+          },
+          smart = {
+            exclude = { "**/node_modules/**", "**/.git/**" }
+          }
+        }
+      },
       notifier = { enabled = false },
       quickfile = { enabled = true },
       scope = { enabled = true },
@@ -23,7 +33,7 @@ return {
     },
     keys = {
       -- Picker
-      { "<leader><leader>", function() Snacks.picker.smart() end,           desc = "Smart Find Files" },
+      { "<leader><leader>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
       { "<leader>fb",       function() Snacks.picker.buffers() end,         desc = "Buffers" },
       { "<leader>fg",       function() Snacks.picker.grep() end,            desc = "Grep" },
       { "<leader>ee",       function() Snacks.explorer() end,               desc = "File Explorer" },

@@ -58,7 +58,7 @@ return {
     },
     opts_extend = { "sources.default" }
   },
-  -- LSP Config - obviously
+  -- LSP Config using new vim.lsp.config API (Neovim 0.11+)
   {
     'neovim/nvim-lspconfig',
     dependencies = { 'saghen/blink.cmp' },
@@ -71,10 +71,13 @@ return {
       }
     },
     config = function(_, opts)
-      local lspconfig = require('lspconfig')
       for server, config in pairs(opts.servers) do
+        -- Add blink capabilities to the config
         config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-        lspconfig[server].setup(config)
+
+        -- Use new vim.lsp.config API instead of lspconfig
+        vim.lsp.config(server, config)
+        vim.lsp.enable(server)
       end
     end
   } }

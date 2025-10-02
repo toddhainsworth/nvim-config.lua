@@ -32,3 +32,6 @@ keymap.set("n", "/", "/\\c")
 
 -- Toggle Folds
 keymap.set("n", "<Space><Space>", "za")
+
+-- Terminal mode exit
+keymap.set("t", "jj", "<C-\\><C-n>")

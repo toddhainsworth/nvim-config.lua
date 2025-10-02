@@ -1,8 +1,11 @@
 return {
   {
-    "f-person/git-blame.nvim",
-    event = "VeryLazy",
-    opts = {}
+    "FabijanZulj/blame.nvim",
+    lazy = false,
+    opts = {},
+    keys = {
+      { "<leader>gb", "<cmd>BlameToggle<cr>", desc = "Open blame window" },
+    },
   },
   {
     "nvim-lualine/lualine.nvim",
@@ -21,5 +24,4 @@ return {
       { "<leader>ng", "<cmd>Neogit<cr>", desc = "Open Neogit" },
     },
   }
-
 }
